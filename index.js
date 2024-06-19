@@ -2,13 +2,13 @@ import express from "express";
 import session from "express-session";
 import dotenv from "dotenv";
 import Redis from "ioredis";
-import connectRedis from "connect-redis";
+import RedisStore from "connect-redis"
 
 dotenv.config();
 
 const app = express();
 
-const RedisStore = connectRedis(session);
+
 const redis = new Redis();
 
 app.use(
